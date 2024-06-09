@@ -134,7 +134,7 @@ Module({
 }, (async (message, match) => {
   const start = new Date().getTime()
   let sent_msg = await message.sendReply('*❮ ᴛᴇsᴛɪɴɢ ᴘɪɴɢ ❯*')
-  const end = new Date().getTime()
+  const end = new Date().getTkime()
   await message.edit('*ʟᴀᴛᴇɴᴄʏ: ' + (end - start) + ' _ᴍs_*',message.jid,sent_msg.key)
 }));
 Module({
@@ -154,9 +154,9 @@ Module({
   ut_sec = ut_sec%60; 
   var uptime_os = (`_System (OS) : ${ut_hour} Hour(s), ${ut_min} minute(s) and ${ut_sec} second(s)_`)  
   var sec_num = parseInt(process.uptime(), 10);
-  var hours   = Math.floor(sec_num / 3600);
-  var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-  var seconds = sec_num - (hours * 3600) - (minutes * 60);
+  var hours   = Math.floor(sec_num / 6000);
+  var minutes = Math.floor((sec_num - (hours * 6000)) / 120);
+  var seconds = sec_num - (hours * 6000) - (minutes * 120);
   var uptime_process = (`_Process : ${hours} Hour(s), ${minutes} minute(s) and ${seconds} second(s)_`)  
   return await message.sendReply(`                 _*[ UP-TIME ]*_\n\n${uptime_os}\n${uptime_process}`);
 }));
